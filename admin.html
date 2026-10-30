@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORMA | Admin Dashboard</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #171312;
+    color: #f8f3ee;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    height: 75px;
+    padding: 0 5%;
+    border-bottom: 1px solid #303133;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.logo span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 4px;
+    margin-top: 4px;
+}
+
+.admin-label {
+    font-size: 10px;
+    color: #d99a76;
+    letter-spacing: 2px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    min-height: calc(100vh - 75px);
+}
+
+.sidebar {
+    padding: 30px 20px;
+    border-right: 1px solid #303133;
+}
+
+.sidebar p {
+    color: #777;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #aaa;
+    padding: 14px;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #2b201d;
+    color: #f2ba99;
+}
+
+main {
+    padding: 40px 5%;
+    min-width: 0;
+}
+
+.eyebrow {
+    color: #d99a76;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.stat {
+    padding: 23px;
+    background: #191a1c;
+    border: 1px solid #303133;
+}
+
+.stat p {
+    color: #999;
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+
+.stat h2 {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.panel {
+    background: #191a1c;
+    border: 1px solid #303133;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.panel h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.panel p {
+    color: #999;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    background: #d99a76;
+    color: #1d1715;
+    padding: 14px 18px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.btn.secondary {
+    background: transparent;
+    color: #d99a76;
+    border: 1px solid #d99a76;
+}
+
+.project-form {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 13px;
+    background: #111213;
+    border: 1px solid #393a3c;
+    color: white;
+    font: inherit;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    color: #bbb;
+    margin-bottom: 8px;
+}
+
+.field {
+    margin-bottom: 5px;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.project-item {
+    border: 1px solid #303133;
+    padding: 15px;
+}
+
+.project-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.project-item h3 {
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.project-item p {
+    font-size: 11px;
+    color: #c9b9a8;
+}
+
+.delete-btn {
+    background: transparent;
+    border: 1px solid #a65c5c;
+    color: #ff9a9a;
+    padding: 9px 12px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#notice {
+    color: #f2ba99;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+footer {
+    color: #777;
+    font-size: 10px;
+    padding-top: 25px;
+    border-top: 1px solid #303133;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+@media(max-width: 800px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .admin-label {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+        border-right: none;
+        border-bottom: 1px solid #303133;
+    }
+
+    .sidebar.open {
+        display: block;
+    }
+
+    main {
+        padding: 30px 5%;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        FORMA
+        <span>ARCHITECTS</span>
+    </div>
+
+    <div class="admin-label">ADMIN CONTROL PANEL</div>
+    <div id="adminName" class="admin-label" style="margin-left:auto; margin-right:12px;">Admin</div>
+
+    <button id="menuBtn" class="menu-btn"
+        aria-label="Toggle menu" aria-expanded="false">☰</button>
+</header>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+        <p>ADMINISTRATION</p>
+
+        <a href="#overview" class="active">Overview</a>
+        <a href="#projects">Projects</a>
+        <a href="#addProject">Add Project</a>
+        <a href="#customers">Customers</a>
+        <a href="#inquiries">Inquiries</a>
+        <a href="index.html">View Website</a>
+        <a href="#" data-sign-out>Sign Out</a>
+    </aside>
+
+    <!-- MAIN -->
+
+    <main id="overview">
+
+        <div class="eyebrow">ADMINISTRATOR</div>
+        <h1>Dashboard Overview.</h1>
+
+        <p class="subtitle">
+            Manage your architecture studio website.
+        </p>
+
+        <!-- STATISTICS -->
+
+        <div class="stats">
+            <div class="stat">
+                <p>TOTAL PROJECTS</p>
+                <h2 id="projectCount">3</h2>
+            </div>
+
+            <div class="stat">
+                <p>CUSTOMERS</p>
+                <h2>—</h2>
+            </div>
+
+            <div class="stat">
+                <p>INQUIRIES</p>
+                <h2>—</h2>
+            </div>
+        </div>
+
+        <!-- ADD PROJECT -->
+
+        <section class="panel" id="addProject">
+            <div class="eyebrow">CONTENT MANAGEMENT</div>
+            <h2>Add New Project</h2>
+
+            <p>
+                Add a project to this dashboard preview.
+            </p>
+
+            <form class="project-form" id="projectForm">
+
+                <div class="field">
+                    <label for="projectName">Project name</label>
+                    <input id="projectName"
+                        placeholder="e.g. Modern Residence"
+                        maxlength="100" required>
+                </div>
+
+                <div class="field">
+                    <label for="projectLocation">Location</label>
+                    <input id="projectLocation"
+                        placeholder="e.g. Lagos, Nigeria"
+                        maxlength="100" required>
+                </div>
+
+                <div class="field">
+                    <label for="projectImage">Image URL</label>
+                    <input id="projectImage"
+                        type="url"
+                        placeholder="https://example.com/image.jpg"
+                        required>
+                </div>
+
+                <div class="field">
+                    <label for="projectDescription">Description</label>
+                    <textarea id="projectDescription"
+                        maxlength="500"
+                        placeholder="Describe the project"></textarea>
+                </div>
+
+                <button class="btn" type="submit">
+                    ADD PROJECT +
+                </button>
+
+                <p id="notice" role="status"></p>
+            </form>
+        </section>
+
+        <!-- PROJECT LIST -->
+
+        <section class="panel" id="projects">
+            <div class="eyebrow">PORTFOLIO</div>
+            <h2>Website Projects</h2>
+
+            <p style="margin-bottom:20px">
+                Demo projects added in this browser.
+            </p>
+
+            <div class="project-list" id="projectList"></div>
+        </section>
+
+        <!-- CUSTOMERS -->
+
+        <section class="panel" id="customers">
+            <div class="eyebrow">USER MANAGEMENT</div>
+            <h2>Customers</h2>
+            <p>
+                Customer management will be available
+                after the secure backend is connected.
+            </p>
+        </section>
+
+        <!-- INQUIRIES -->
+
+        <section class="panel" id="inquiries">
+            <div class="eyebrow">MESSAGES</div>
+            <h2>Customer Inquiries</h2>
+            <p>
+                Customer inquiries will appear here
+                after we connect the backend.
+            </p>
+        </section>
+
+        <footer>
+            FORMA ARCHITECTS © 2026
+            <br><br>
+            Admin dashboard preview
+        </footer>
+
+    </main>
+</div>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+
+if (menuBtn && sidebar) {
+    menuBtn.addEventListener("click", function() {
+        sidebar.classList.toggle("open");
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            sidebar.classList.contains("open")
+        );
+    });
+}
+
+async function signOut() {
+    try {
+        await fetch("/api/auth/logout", {
+            method: "POST",
+            credentials: "same-origin"
+        });
+    } catch (error) {
+        console.error("Admin sign-out failed:", error);
+    } finally {
+        window.location.replace("login.html");
+    }
+}
+
+document.querySelectorAll("[data-sign-out]").forEach((link) => {
+    link.addEventListener("click", async (event) => {
+        event.preventDefault();
+        await signOut();
+    });
+});
+
+const defaultProjects = [
+    {
+        name: "Private Residence",
+        location: "Lagos, Nigeria",
+        image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
+        description: "Contemporary residential design."
+    },
+    {
+        name: "Urban House",
+        location: "Abuja, Nigeria",
+        image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85",
+        description: "Modern architecture and space."
+    },
+    {
+        name: "Cultural Space",
+        location: "Dubai, UAE",
+        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85",
+        description: "A study in form and light."
+    }
+];
+
+let projects = defaultProjects;
+
+const projectList = document.getElementById("projectList");
+const projectCount = document.getElementById("projectCount");
+const notice = document.getElementById("notice");
+
+function renderProjects() {
+    if (!projectList) return;
+    projectList.replaceChildren();
+
+    projects.forEach(function(project, index) {
+        const card = document.createElement("article");
+        card.className = "project-item";
+
+        const img = document.createElement("img");
+        img.src = project.image;
+        img.alt = project.name;
+        img.loading = "lazy";
+
+        const title = document.createElement("h3");
+        title.textContent = project.name;
+
+        const location = document.createElement("p");
+        location.textContent = project.location;
+
+        const description = document.createElement("p");
+        description.textContent = project.description;
+
+        const button = document.createElement("button");
+        button.className = "delete-btn";
+        button.textContent = "Remove preview";
+
+        button.addEventListener("click", function() {
+            projects.splice(index, 1);
+            renderProjects();
+            if (notice) {
+                notice.textContent = "Project removed from this temporary preview.";
+            }
+        });
+
+        card.append(img, title, location, description, button);
+        projectList.appendChild(card);
+    });
+
+    if (projectCount) {
+        projectCount.textContent = projects.length;
+    }
+}
+
+document.getElementById("projectForm")?.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const imageURL = document.getElementById("projectImage").value.trim();
+
+    try {
+        const url = new URL(imageURL);
+
+        if (url.protocol !== "https:") {
+            if (notice) {
+                notice.textContent = "Please use a secure HTTPS image URL.";
+            }
+            return;
+        }
+    } catch {
+        if (notice) {
+            notice.textContent = "Please enter a valid image URL.";
+        }
+        return;
+    }
+
+    projects.push({
+        name: document.getElementById("projectName").value.trim(),
+        location: document.getElementById("projectLocation").value.trim(),
+        image: imageURL,
+        description: document.getElementById("projectDescription").value.trim()
+    });
+
+    renderProjects();
+
+    if (notice) {
+        notice.textContent = "Project added to this temporary dashboard preview.";
+    }
+
+    this.reset();
+});
+
+async function setUpAdminDashboard() {
+    try {
+        const meResponse = await fetch("/api/auth/me", {
+            credentials: "same-origin"
+        });
+
+        if (!meResponse.ok) {
+            window.location.replace("login.html");
+            return;
+        }
+
+        const { user } = await meResponse.json();
+
+        if (!user || user.role !== "admin") {
+            window.location.replace(user && user.role === "customer" ? "dashboard.html" : "login.html");
+            return;
+        }
+
+        const adminName = document.getElementById("adminName");
+        if (adminName) {
+            adminName.textContent = user.name || "Admin";
+        }
+    } catch (error) {
+        console.error("Admin session check failed:", error);
+        window.location.replace("login.html");
+    }
+}
+
+renderProjects();
+setUpAdminDashboard();
+</script>
+
+</body>
+</html>

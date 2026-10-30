@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FORMA ARCHITECTS | Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #171312;
+            color: #f8f3ee;
+            min-height: 100vh;
+        }
+
+        .page {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+        }
+
+        /* LEFT IMAGE */
+
+        .visual {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 50px;
+            background:
+                linear-gradient(
+                    0deg,
+                    rgba(0,0,0,.8),
+                    rgba(0,0,0,.1)
+                ),
+                url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85")
+                center/cover;
+        }
+
+        .brand {
+            position: absolute;
+            top: 35px;
+            left: 40px;
+            font-size: 23px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: #f7efe7;
+        }
+
+        .brand span {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 4px;
+            margin-top: 5px;
+        }
+
+        .visual h1 {
+            font-size: clamp(40px, 5vw, 70px);
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .visual p {
+            color: #ddd;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* LOGIN SECTION */
+
+        .login-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 35px;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 390px;
+        }
+
+        .back {
+            display: inline-block;
+            color: #aaa;
+            text-decoration: none;
+            font-size: 12px;
+            margin-bottom: 50px;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        .eyebrow {
+            color: #d99a76;
+            font-size: 11px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .field {
+            margin-bottom: 22px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 10px;
+            color: #ddd;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            background: #191a1c;
+            color: white;
+            border: 1px solid #393a3c;
+            outline: none;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #c0a27a;
+        }
+
+        .password-wrap {
+            position: relative;
+        }
+
+        .password-wrap input {
+            padding-right: 65px;
+        }
+
+        .toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #c0a27a;
+            cursor: pointer;
+        }
+
+        .options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 5px 0 25px;
+            font-size: 11px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #aaa;
+        }
+
+        .remember input {
+            width: 14px;
+            height: 14px;
+            accent-color: #c0a27a;
+        }
+
+        .options a,
+        .signup a {
+            color: #d99a76;
+            text-decoration: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            background: #d99a76;
+            color: #1d1715;
+            cursor: pointer;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: .3s;
+        }
+
+        .submit-btn:hover {
+            background: #e8b095;
+        }
+
+        #message {
+            font-size: 12px;
+            color: #f2c0a2;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        .signup {
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+            margin-top: 28px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #292a2c;
+            margin: 30px 0 20px;
+        }
+
+        .footer {
+            color: #666;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        /* MOBILE RESPONSIVE */
+
+        @media (max-width: 800px) {
+            .page {
+                grid-template-columns: 1fr;
+            }
+
+            .visual {
+                min-height: 260px;
+                padding: 25px;
+            }
+
+            .brand {
+                top: 20px;
+                left: 25px;
+            }
+
+            .visual h1 {
+                font-size: 38px;
+            }
+
+            .visual p {
+                font-size: 12px;
+            }
+
+            .login-area {
+                padding: 35px 25px;
+            }
+
+            .back {
+                margin-bottom: 35px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- IMAGE SIDE -->
+
+        <section class="visual">
+
+            <div class="brand">
+                FORMA
+                <span>ARCHITECTS</span>
+            </div>
+
+            <div>
+                <h1>SPACES<br>THAT SPEAK.</h1>
+
+                <p>
+                    Thoughtful architecture.<br>
+                    Timeless design.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- LOGIN SIDE -->
+
+        <main class="login-area">
+
+            <div class="login-box">
+
+                <a href="index.html" class="back">
+                    ← Back to website
+                </a>
+
+                <div class="eyebrow">
+                    FORMA ARCHITECTS
+                </div>
+
+                <h2>Welcome back.</h2>
+
+                <p class="subtitle">
+                    Sign in to access your account
+                    and your project workspace.
+                </p>
+
+                <form id="loginForm">
+
+                    <div class="field">
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="username"
+                            required>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="password-wrap">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required>
+
+                            <button
+                                type="button"
+                                class="toggle"
+                                id="togglePassword">
+                                SHOW
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="options">
+
+                        <label class="remember">
+                            <input type="checkbox" id="remember">
+                            Remember me
+                        </label>
+
+                        <a href="mailto:hello@example.com?subject=Password%20Reset">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+                        SIGN IN →
+                    </button>
+
+                    <p id="message" role="status"></p>
+
+                </form>
+
+                <p class="signup">
+                    Don't have an account?
+                    <a href="register.html">
+                        Create an account
+                    </a>
+                </p>
+
+                <div class="divider"></div>
+
+                <p class="footer">
+                    © 2026 FORMA ARCHITECTS
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script>
+       async function redirectIfSignedIn() {
+           try {
+               const response = await fetch("/api/auth/me", {
+                   credentials: "same-origin"
+               });
+
+               if (!response.ok) {
+                   return;
+               }
+
+               const { user } = await response.json();
+
+               if (user && user.role === "admin") {
+                   window.location.replace("admin.html");
+                   return;
+               }
+
+               if (user && user.role === "customer") {
+                   window.location.replace("dashboard.html");
+               }
+           } catch (error) {
+               console.warn("Could not determine signed-in state.", error);
+           }
+       }
+
+       redirectIfSignedIn();
+
+       const loginForm = document.querySelector("#loginForm");
+
+       if (loginForm) {
+           loginForm.addEventListener("submit", async (event) => {
+               event.preventDefault();
+
+               const email = loginForm.querySelector('#email')?.value.trim();
+               const password = loginForm.querySelector('#password')?.value;
+               const submitButton = loginForm.querySelector('button[type="submit"]');
+               const message = document.getElementById("message");
+
+               if (!email || !password) {
+                   if (message) {
+                       message.textContent = "Please complete all fields.";
+                   }
+                   return;
+               }
+
+               if (submitButton) {
+                   submitButton.disabled = true;
+                   submitButton.textContent = "SIGNING IN...";
+               }
+
+               try {
+                   const response = await fetch("/api/auth/login", {
+                       method: "POST",
+                       headers: {
+                           "Content-Type": "application/json"
+                       },
+                       credentials: "same-origin",
+                       body: JSON.stringify({ email, password })
+                   });
+
+                   const result = await response.json();
+
+                   if (!response.ok) {
+                       if (message) {
+                           message.textContent = result.message || "Unable to sign in.";
+                       }
+                       return;
+                   }
+
+                   if (message) {
+                       message.textContent = "Signing in...";
+                   }
+
+                   const redirectTarget = result.user && result.user.role === "admin"
+                       ? "admin.html"
+                       : "dashboard.html";
+
+                   window.location.href = redirectTarget;
+               } catch (error) {
+                   if (message) {
+                       message.textContent = "Could not connect to the server.";
+                   }
+               } finally {
+                   if (submitButton) {
+                       submitButton.disabled = false;
+                       submitButton.textContent = "SIGN IN →";
+                   }
+               }
+           });
+       }
+
+       const passwordToggle = document.getElementById("togglePassword");
+       const passwordInput = document.getElementById("password");
+
+       if (passwordToggle && passwordInput) {
+           passwordToggle.addEventListener("click", () => {
+               const isHidden = passwordInput.type === "password";
+               passwordInput.type = isHidden ? "text" : "password";
+               passwordToggle.textContent = isHidden ? "HIDE" : "SHOW";
+           });
+       }
+   </script>
+
+</body>
+</html>
