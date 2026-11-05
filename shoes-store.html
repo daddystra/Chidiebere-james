@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop the SOLE DISTRICT sneaker collection.">
+    <title>SOLE DISTRICT | Shoes Store</title>
+    <link rel="stylesheet" href="cl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="store-shoes">
+    <div class="announcement">
+        <p>WELCOME TO SOLE DISTRICT — STREET CULTURE STARTS HERE.</p>
+    </div>
+
+    <header class="navbar">
+        <a href="cl.html#home" class="logo">
+            SOLE <span>DISTRICT</span><sup>®</sup>
+        </a>
+
+        <nav class="nav-links">
+            <a href="cl.html#home">HOME</a>
+            <a href="shoes-store.html">SHOES</a>
+            <a href="clothing-store.html">CLOTHING</a>
+            <a href="cl.html#new-drops">NEW DROPS</a>
+            <a href="cl.html#about">ABOUT</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="search-btn" aria-label="Search">⌕</button>
+            <a href="shopping-bag.html" class="bag">
+                BAG (<span id="cart-count">0</span>)
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+        </div>
+    </header>
+
+    <div class="search-overlay" id="search-overlay" aria-hidden="true">
+        <div class="search-panel">
+            <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+            <label class="search-label" for="site-search">SEARCH THE DISTRICT</label>
+            <div class="search-input-row">
+                <input id="site-search" type="text" placeholder="Search sneakers, hoodie, tee..." autocomplete="off">
+                <button class="search-submit" type="button">SEARCH</button>
+            </div>
+            <p id="search-status" class="search-status">Type to find your next piece.</p>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="cl.html#home">HOME</a>
+        <a href="shoes-store.html">SHOES</a>
+        <a href="clothing-store.html">CLOTHING</a>
+        <a href="cl.html#new-drops">NEW DROPS</a>
+        <a href="cl.html#about">ABOUT</a>
+    </div>
+
+    <main class="store-page">
+        <section class="store-hero shoes-hero">
+            <div class="store-hero-copy">
+                <p class="section-label">SOLE DISTRICT / FOOTWEAR</p>
+                <h1>OWN <span>THE</span> MOVE.</h1>
+                <p>Premium sneakers built for the city, the studio and everything in between.</p>
+            </div>
+        </section>
+
+        <section class="store-products">
+            <div class="section-heading store-heading">
+                <div>
+                    <p class="section-label">STEP INTO IT</p>
+                    <h2>THE <span>SHOE</span> DROP.</h2>
+                </div>
+                <a href="cl.html#shop" class="view-all">BACK TO HOME ↗</a>
+            </div>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">BEST SELLER</span>
+                        <img src="img/Jordan-Nike.jpg" alt="Red sneaker">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>RED STREET RUNNER</h3>
+                            <p>Urban Sneakers</p>
+                        </div>
+                        <strong>₦85,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="Red Street Runner" data-price="85000" data-product="red-street-runner">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">NEW DROP</span>
+                        <img src="img/Mens shoes ideas.jpg" alt="Classic sneaker">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>CLASSIC LOW</h3>
+                            <p>Everyday Sneakers</p>
+                        </div>
+                        <strong>₦95,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="Classic Low" data-price="95000" data-product="classic-low">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">LIMITED</span>
+                        <img src="img/Nike Men's Air Force 1 '07 Sneaker.jpg" alt="Fashion sneakers">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>URBAN FORCE</h3>
+                            <p>Street Collection</p>
+                        </div>
+                        <strong>₦110,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="Urban Force" data-price="110000" data-product="urban-force">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">TRENDING</span>
+                        <img src="img/Blue Nubuck Torino.jpg" alt="Blue Nuback Torino sneaker">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>DAILY MOTION</h3>
+                            <p>Sport Lifestyle</p>
+                        </div>
+                        <strong>₦90,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="Daily Motion" data-price="90000" data-product="daily-motion">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card is-hidden">
+                    <div class="product-image">
+                        <span class="product-tag">NEW</span>
+                        <img src="img/New Samba release in white leather with green….jpg" alt="Adidias Samba sneaker">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>SUMMIT RUNNER</h3>
+                            <p>Trail Performance</p>
+                        </div>
+                        <strong>₦98,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="Summit Runner" data-price="98000" data-product="summit-runner">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card is-hidden">
+                    <div class="product-image">
+                        <span class="product-tag">TRENDING</span>
+                        <img src="img/Zapatillas Puma Park Lifestyle Easy Unisex Moda Negro.jpg" alt="City Boost sneaker">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>CITY BOOST</h3>
+                            <p>Lifestyle Runner</p>
+                        </div>
+                        <strong>₦92,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="City Boost" data-price="92000" data-product="city-boost">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card is-hidden">
+                    <div class="product-image">
+                        <span class="product-tag">LIMITED</span>
+                        <img src="img/Timberland comemora 40 anos com 1973 pares de botas numeradas e exclusivas.jpg" alt="Timberland sneaker boot">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>MIDNIGHT ACE</h3>
+                            <p>Premium Street</p>
+                        </div>
+                        <strong>₦101,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="Midnight Ace" data-price="101000" data-product="midnight-ace">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+            </div>
+
+            <div class="store-actions">
+                <button class="see-more-btn" type="button" data-expanded="false">SEE MORE</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div>
+                <a href="cl.html#home" class="logo">
+                    SOLE <span>DISTRICT</span><sup>®</sup>
+                </a>
+                <p>STREET CULTURE. EVERYDAY STYLE.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="shoes-store.html">Shoes</a>
+                <a href="clothing-store.html">Clothing</a>
+                <a href="cl.html#about">Our Story</a>
+                <a href="mailto:hello@soledistrict.com">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-support">
+            <div class="support-card">
+                <span>Customer Service</span>
+                <a href="tel:+2348000000000">+234 800 000 0000</a>
+            </div>
+            <div class="support-card">
+                <span>Email</span>
+                <a href="mailto:hello@soledistrict.com">hello@soledistrict.com</a>
+            </div>
+            <div class="support-card">
+                <span>WhatsApp</span>
+                <a href="https://wa.me/2348000000000" target="_blank" rel="noreferrer">Chat with us</a>
+            </div>
+            <div class="support-card">
+                <span>Help Center</span>
+                <a href="help-center.html">Visit support</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 SOLE DISTRICT. ALL RIGHTS RESERVED.</p>
+            <p>BUILT FOR THE STREETS.</p>
+        </div>
+    </footer>
+
+    <script src="cl.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop the SOLE DISTRICT clothing collection.">
+    <title>SOLE DISTRICT | Clothing Store</title>
+    <link rel="stylesheet" href="cl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="store-clothing">
+    <div class="announcement">
+        <p>WELCOME TO SOLE DISTRICT — STREET CULTURE STARTS HERE.</p>
+    </div>
+
+    <header class="navbar">
+        <a href="cl.html#home" class="logo">
+            SOLE <span>DISTRICT</span><sup>®</sup>
+        </a>
+
+        <nav class="nav-links">
+            <a href="cl.html#home">HOME</a>
+            <a href="shoes-store.html">SHOES</a>
+            <a href="clothing-store.html">CLOTHING</a>
+            <a href="cl.html#new-drops">NEW DROPS</a>
+            <a href="cl.html#about">ABOUT</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="search-btn" aria-label="Search">⌕</button>
+            <a href="shopping-bag.html" class="bag">
+                BAG (<span id="cart-count">0</span>)
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+        </div>
+    </header>
+
+    <div class="search-overlay" id="search-overlay" aria-hidden="true">
+        <div class="search-panel">
+            <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+            <label class="search-label" for="site-search">SEARCH THE DISTRICT</label>
+            <div class="search-input-row">
+                <input id="site-search" type="text" placeholder="Search sneakers, hoodie, tee..." autocomplete="off">
+                <button class="search-submit" type="button">SEARCH</button>
+            </div>
+            <p id="search-status" class="search-status">Type to find your next piece.</p>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="cl.html#home">HOME</a>
+        <a href="shoes-store.html">SHOES</a>
+        <a href="clothing-store.html">CLOTHING</a>
+        <a href="cl.html#new-drops">NEW DROPS</a>
+        <a href="cl.html#about">ABOUT</a>
+    </div>
+
+    <main class="store-page">
+        <section class="store-hero clothing-hero">
+            <div class="store-hero-copy">
+                <p class="section-label">SOLE DISTRICT / APPAREL</p>
+                <h1>BUILD <span>YOUR</span> LOOK.</h1>
+                <p>Clean silhouettes, layered fits, and everyday essentials that move with your mood.</p>
+            </div>
+        </section>
+
+        <section class="store-products">
+            <div class="section-heading store-heading">
+                <div>
+                    <p class="section-label">DRESS LIKE YOU MEAN IT</p>
+                    <h2>STREET <span>ESSENTIALS.</span></h2>
+                </div>
+                <a href="cl.html#shop" class="view-all">BACK TO HOME ↗</a>
+            </div>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">NEW</span>
+                        <img src="img/10 Streetwear Color Combinations That Never Go Out of Style_ Timeless Looks for Your Wardrobe.jpg" alt="White oversized T-shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>OVERSIZED TEE</h3>
+                            <p>Essential Collection</p>
+                        </div>
+                        <strong>₦25,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="Oversized Tee" data-price="25000" data-product="oversized-tee">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">POPULAR</span>
+                        <img src="img/03550901400-A2M_jpg (1440×2161).jpg" alt="Streetwear hoodie">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>DISTRICT HOODIE</h3>
+                            <p>Premium Streetwear</p>
+                        </div>
+                        <strong>₦45,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="District Hoodie" data-price="45000" data-product="district-hoodie">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">TRENDING</span>
+                        <img src="img/55555.jpg" alt="Streetwear fashion">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>URBAN FIT</h3>
+                            <p>Street Collection</p>
+                        </div>
+                        <strong>₦38,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="Urban Fit" data-price="38000" data-product="urban-fit">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">NEW DROP</span>
+                        <img src="img/Jaqueta casual masculina de streetwear com estampa em cores contrastantes.jpg" alt="Streetwear jacket">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>DISTRICT JACKET</h3>
+                            <p>Outerwear</p>
+                        </div>
+                        <strong>₦65,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="District Jacket" data-price="65000" data-product="district-jacket">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card is-hidden">
+                    <div class="product-image">
+                        <span class="product-tag">NEW</span>
+                        <img src="img/219.jpg" alt="Canvas Tee">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>CANVAS TEE</h3>
+                            <p>Essential Basics</p>
+                        </div>
+                        <strong>₦22,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="Canvas Tee" data-price="22000" data-product="canvas-tee">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card is-hidden">
+                    <div class="product-image">
+                        <span class="product-tag">POPULAR</span>
+                        <img src="img/03550901400-A2M_jpg (1440×2161).jpg" alt="Night Shift Hoodie">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>NIGHT SHIFT HOODIE</h3>
+                            <p>Heavyweight Layering</p>
+                        </div>
+                        <strong>₦48,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="Night Shift Hoodie" data-price="48000" data-product="night-shift-hoodie">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+
+                <article class="product-card is-hidden">
+                    <div class="product-image">
+                        <span class="product-tag">LIMITED</span>
+                        <img src="img/Jaqueta casual masculina de streetwear com estampa em cores contrastantes.jpg" alt="Utility Bomber jacket">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>UTILITY BOMBER</h3>
+                            <p>Outerwear</p>
+                        </div>
+                        <strong>₦71,000</strong>
+                    </div>
+                    <button class="add-cart" data-name="Utility Bomber" data-price="71000" data-product="utility-bomber">
+                        SELECT OPTIONS +
+                    </button>
+                </article>
+            </div>
+
+            <div class="store-actions">
+                <button class="see-more-btn" type="button" data-expanded="false">SEE MORE</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div>
+                <a href="cl.html#home" class="logo">
+                    SOLE <span>DISTRICT</span><sup>®</sup>
+                </a>
+                <p>STREET CULTURE. EVERYDAY STYLE.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="shoes-store.html">Shoes</a>
+                <a href="clothing-store.html">Clothing</a>
+                <a href="cl.html#about">Our Story</a>
+                <a href="mailto:hello@soledistrict.com">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-support">
+            <div class="support-card">
+                <span>Customer Service</span>
+                <a href="tel:+2348000000000">+234 800 000 0000</a>
+            </div>
+            <div class="support-card">
+                <span>Email</span>
+                <a href="mailto:hello@soledistrict.com">hello@soledistrict.com</a>
+            </div>
+            <div class="support-card">
+                <span>WhatsApp</span>
+                <a href="https://wa.me/2348000000000" target="_blank" rel="noreferrer">Chat with us</a>
+            </div>
+            <div class="support-card">
+                <span>Help Center</span>
+                <a href="help-center.html">Visit support</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 SOLE DISTRICT. ALL RIGHTS RESERVED.</p>
+            <p>BUILT FOR THE STREETS.</p>
+        </div>
+    </footer>
+
+    <script src="cl.js"></script>
+</body>
+</html>

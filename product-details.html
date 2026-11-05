@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View product details, choose your size and colour, and add it to your bag.">
+    <title>SOLE DISTRICT | Product Details</title>
+    <link rel="stylesheet" href="cl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="product-details">
+    <div class="announcement">
+        <p>WELCOME TO SOLE DISTRICT — STREET CULTURE STARTS HERE.</p>
+    </div>
+
+    <header class="navbar">
+        <a href="cl.html#home" class="logo">
+            SOLE <span>DISTRICT</span><sup>®</sup>
+        </a>
+
+        <nav class="nav-links">
+            <a href="cl.html#home">HOME</a>
+            <a href="cl.html#sneakers">SNEAKERS</a>
+            <a href="cl.html#clothing">CLOTHING</a>
+            <a href="cl.html#new-drops">NEW DROPS</a>
+            <a href="cl.html#about">ABOUT</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="search-btn" aria-label="Search">⌕</button>
+            <a href="shopping-bag.html" class="bag">
+                BAG (<span id="cart-count">0</span>)
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+        </div>
+    </header>
+
+    <div class="search-overlay" id="search-overlay" aria-hidden="true">
+        <div class="search-panel">
+            <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+            <label class="search-label" for="site-search">SEARCH THE DISTRICT</label>
+            <div class="search-input-row">
+                <input id="site-search" type="text" placeholder="Search sneakers, hoodie, tee..." autocomplete="off">
+                <button class="search-submit" type="button">SEARCH</button>
+            </div>
+            <p id="search-status" class="search-status">Type to find your next piece.</p>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="cl.html#home">HOME</a>
+        <a href="cl.html#sneakers">SNEAKERS</a>
+        <a href="cl.html#clothing">CLOTHING</a>
+        <a href="cl.html#new-drops">NEW DROPS</a>
+        <a href="cl.html#about">ABOUT</a>
+    </div>
+
+    <main class="product-detail-page">
+        <div class="breadcrumb-wrap">
+            <a href="cl.html#shop" class="back-link">← Back to collection</a>
+        </div>
+
+        <section class="product-detail-layout">
+            <div class="detail-gallery">
+                <div class="detail-gallery-main">
+                    <img id="detail-main-image" src="img/Jordan-Nike.jpg" alt="Selected product image">
+                </div>
+            </div>
+
+            <div class="product-detail-panel">
+                <p class="section-label" id="detail-tag">BEST SELLER</p>
+                <h1 id="detail-name">RED STREET RUNNER</h1>
+                <div class="detail-price-row">
+                    <span class="detail-price" id="detail-price">₦85,000</span>
+                    <span class="detail-stock">In stock</span>
+                </div>
+
+                <p class="detail-description" id="detail-description">
+                    Built for the city and refined for the weekend. A clean profile, premium cushioning, and standout colourway designed to move with you.
+                </p>
+
+                <div class="selector-group">
+                    <div class="selector-header">
+                        <span>Colour</span>
+                        <strong id="selected-colour-label">Sunset Red</strong>
+                    </div>
+                    <div id="color-options" class="color-options"></div>
+                </div>
+
+                <div class="selector-group">
+                    <div class="selector-header">
+                        <span>Size</span>
+                        <strong id="selected-size-label">Select a size</strong>
+                    </div>
+                    <div id="size-options" class="size-options"></div>
+                </div>
+
+                <div class="purchase-row">
+                    <div class="quantity-control" aria-label="Choose quantity">
+                        <button type="button" data-action="decrease" aria-label="Decrease quantity">−</button>
+                        <input id="detail-quantity" type="number" min="1" value="1" aria-label="Quantity">
+                        <button type="button" data-action="increase" aria-label="Increase quantity">+</button>
+                    </div>
+
+                    <button id="add-selected-product" class="primary-detail-btn" type="button">
+                        ADD TO BAG
+                    </button>
+                </div>
+
+                <ul class="product-features">
+                    <li>Free delivery on orders above ₦50,000</li>
+                    <li>Easy 30-day returns</li>
+                    <li>Authentic streetwear quality</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div>
+                <a href="cl.html#home" class="logo">
+                    SOLE <span>DISTRICT</span><sup>®</sup>
+                </a>
+                <p>STREET CULTURE. EVERYDAY STYLE.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="cl.html#sneakers">Sneakers</a>
+                <a href="cl.html#clothing">Clothing</a>
+                <a href="cl.html#about">Our Story</a>
+                <a href="mailto:hello@soledistrict.com">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-support">
+            <div class="support-card">
+                <span>Customer Service</span>
+                <a href="tel:+2348000000000">+234 800 000 0000</a>
+            </div>
+            <div class="support-card">
+                <span>Email</span>
+                <a href="mailto:hello@soledistrict.com">hello@soledistrict.com</a>
+            </div>
+            <div class="support-card">
+                <span>WhatsApp</span>
+                <a href="https://wa.me/2348000000000" target="_blank" rel="noreferrer">Chat with us</a>
+            </div>
+            <div class="support-card">
+                <span>Help Center</span>
+                <a href="help-center.html">Visit support</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 SOLE DISTRICT. ALL RIGHTS RESERVED.</p>
+            <p>BUILT FOR THE STREETS.</p>
+        </div>
+    </footer>
+
+    <script src="cl.js"></script>
+</body>
+</html>

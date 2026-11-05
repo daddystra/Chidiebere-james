@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Review your selected products, update quantities, and continue to checkout.">
+    <title>SOLE DISTRICT | Shopping Bag</title>
+    <link rel="stylesheet" href="cl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="shopping-bag">
+    <div class="announcement">
+        <p>WELCOME TO SOLE DISTRICT — STREET CULTURE STARTS HERE.</p>
+    </div>
+
+    <header class="navbar">
+        <a href="cl.html#home" class="logo">
+            SOLE <span>DISTRICT</span><sup>®</sup>
+        </a>
+
+        <nav class="nav-links">
+            <a href="cl.html#home">HOME</a>
+            <a href="cl.html#sneakers">SNEAKERS</a>
+            <a href="cl.html#clothing">CLOTHING</a>
+            <a href="cl.html#new-drops">NEW DROPS</a>
+            <a href="cl.html#about">ABOUT</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="search-btn" aria-label="Search">⌕</button>
+            <a href="shopping-bag.html" class="bag">
+                BAG (<span id="cart-count">0</span>)
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+        </div>
+    </header>
+
+    <div class="search-overlay" id="search-overlay" aria-hidden="true">
+        <div class="search-panel">
+            <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+            <label class="search-label" for="site-search">SEARCH THE DISTRICT</label>
+            <div class="search-input-row">
+                <input id="site-search" type="text" placeholder="Search sneakers, hoodie, tee..." autocomplete="off">
+                <button class="search-submit" type="button">SEARCH</button>
+            </div>
+            <p id="search-status" class="search-status">Type to find your next piece.</p>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="cl.html#home">HOME</a>
+        <a href="cl.html#sneakers">SNEAKERS</a>
+        <a href="cl.html#clothing">CLOTHING</a>
+        <a href="cl.html#new-drops">NEW DROPS</a>
+        <a href="cl.html#about">ABOUT</a>
+    </div>
+
+    <main class="bag-page">
+        <section class="bag-header">
+            <p class="section-label">YOUR BAG</p>
+            <h1>READY TO <span>CHECK OUT.</span></h1>
+        </section>
+
+        <section class="bag-layout">
+            <div class="bag-items-panel">
+                <div class="bag-items-header">
+                    <h2>ITEMS</h2>
+                    <span id="bag-item-count">0</span>
+                </div>
+                <div id="bag-items" class="bag-items"></div>
+            </div>
+
+            <aside class="bag-summary-panel">
+                <h2>ORDER SUMMARY</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong id="summary-subtotal">₦0</strong>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <strong id="summary-shipping">₦0</strong>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <strong id="summary-total">₦0</strong>
+                </div>
+
+                <button class="checkout-btn" type="button">SECURE CHECKOUT</button>
+                <a href="cl.html#shop" class="continue-shopping">CONTINUE SHOPPING</a>
+            </aside>
+        </section>
+    </main>
+
+    <div class="checkout-choice-modal" id="checkout-choice-modal" aria-hidden="true">
+        <div class="checkout-choice-panel">
+            <button class="checkout-choice-close" id="checkout-choice-close" type="button" aria-label="Close checkout options">✕</button>
+            <p class="section-label">CHECKOUT</p>
+            <h2>HOW WOULD YOU LIKE TO CONTINUE?</h2>
+            <p class="checkout-choice-copy">Before payment, choose how you’d like to complete your order.</p>
+
+            <label class="checkout-email-field" for="checkout-email-input">
+                <span>Email address</span>
+                <input id="checkout-email-input" type="email" placeholder="you@example.com" autocomplete="email">
+            </label>
+
+            <div class="checkout-choice-actions">
+                <button class="choice-primary" id="checkout-email-login" type="button">LOGIN WITH EMAIL</button>
+                <button class="choice-secondary" id="checkout-guest" type="button">CONTINUE AS GUEST</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div>
+                <a href="cl.html#home" class="logo">
+                    SOLE <span>DISTRICT</span><sup>®</sup>
+                </a>
+                <p>STREET CULTURE. EVERYDAY STYLE.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="cl.html#sneakers">Sneakers</a>
+                <a href="cl.html#clothing">Clothing</a>
+                <a href="cl.html#about">Our Story</a>
+                <a href="mailto:hello@soledistrict.com">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-support">
+            <div class="support-card">
+                <span>Customer Service</span>
+                <a href="tel:+2348000000000">+234 800 000 0000</a>
+            </div>
+            <div class="support-card">
+                <span>Email</span>
+                <a href="mailto:hello@soledistrict.com">hello@soledistrict.com</a>
+            </div>
+            <div class="support-card">
+                <span>WhatsApp</span>
+                <a href="https://wa.me/2348000000000" target="_blank" rel="noreferrer">Chat with us</a>
+            </div>
+            <div class="support-card">
+                <span>Help Center</span>
+                <a href="help-center.html">Visit support</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 SOLE DISTRICT. ALL RIGHTS RESERVED.</p>
+            <p>BUILT FOR THE STREETS.</p>
+        </div>
+    </footer>
+
+    <script src="cl.js"></script>
+</body>
+</html>
